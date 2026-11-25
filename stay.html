@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stay & Pricing — Yog Gram Cottages and Tariffs</title>
+<meta name="description" content="Cottage categories and per-day tariffs at Yog Gram Haridwar: Rajrishi, Maharishi, Tapasvi and Nisarg cottages. Includes treatment, therapies and medicated diet.">
+<meta name="theme-color" content="#0F2E22">
+<link rel="icon" href="assets/img/yg-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="stay">
+
+<section class="page-hero">
+  <img class="bg" src="assets/img/g4.webp" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> / <span>Stay & Pricing</span></div>
+    <h1 class="reveal">Stay & <em class="serif">pricing</em></h1>
+    <p class="lead reveal d1">Transparent per‑day tariffs that include your room, treatment, therapies and medicated diet.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Cottages</span>
+      <h2>Choose your <span class="grad-text">healing home</span></h2>
+      <p class="lead">All tariffs are per day and include accommodation + treatment, therapies & medicated diet. Revised rates effective 1 April 2025.</p>
+    </div>
+    <div class="grid g-4" id="priceGrid"></div>
+    <div class="notice reveal" style="margin-top:40px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      <div>One‑time registration fee of <b>₹300 per person</b>. Minimum stay is <b>7 days</b>. Treatment kit, blood tests, medicines and special therapies are charged separately. Tariffs are indicative — please confirm with the centre before booking.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section style="background:var(--cream-2)">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Smart Estimator</span>
+      <h2>Estimate your <em class="serif">stay cost</em></h2>
+      <p class="lead">Pick a cottage and number of days to get an instant estimate.</p>
+      <img src="assets/img/g5.webp" alt="Cottages" style="border-radius:var(--radius);margin-top:24px;box-shadow:var(--shadow)">
+    </div>
+    <div class="form-card reveal d1">
+      <div class="form-grid">
+        <div class="field full"><label for="cRoom">Cottage</label><select id="cRoom"></select></div>
+        <div class="field"><label for="cDays">Number of days: <b id="cDaysOut">7</b></label><input type="range" id="cDays" min="7" max="45" value="7" style="padding:0;accent-color:var(--saffron)"></div>
+        <div class="field"><label for="cPersons">Guests</label><select id="cPersons"><option value="1">1 person</option><option value="2">2 persons</option></select></div>
+      </div>
+      <div style="margin-top:24px">
+        <div class="price-split"><span>Room charges</span><b id="cR">–</b></div>
+        <div class="price-split"><span>Treatment, therapies & diet</span><b id="cT">–</b></div>
+        <div class="price-split"><span>Registration (one‑time)</span><b id="cG">–</b></div>
+      </div>
+      <div class="estimate" style="margin-top:18px"><div><small>Estimated total</small><b id="cTotal">–</b></div><a href="contact.html#book" class="btn btn-primary" id="cBook">Book this stay</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal"><span class="eyebrow">Compare</span><h2>Cottage comparison</h2></div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>Cottage</th><th>Room / day</th><th>Treatment & diet / day</th><th>Total / day</th><th>Cooling</th><th>Highlights</th></tr></thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSIONS -->
+<section style="padding-top:0">
+  <div class="container grid g-2">
+    <div class="card reveal">
+      <div class="icon-bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5L20 7"/></svg></div>
+      <h3>Included in your stay</h3>
+      <ul class="checks" style="grid-template-columns:1fr">
+        <li>Accommodation in your chosen cottage</li>
+        <li>All meals — medicated sattvic diet</li>
+        <li>All therapies prescribed by the doctor</li>
+        <li>Daily doctor consultation</li>
+        <li>Morning & evening yoga sessions</li>
+      </ul>
+    </div>
+    <div class="card reveal d1">
+      <div class="icon-bubble" style="background:#FDEBDD;color:var(--saffron)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></div>
+      <h3>Charged separately</h3>
+      <p style="margin-bottom:14px">Treatment kit, blood tests and medicines, plus these therapies on doctor's prescription:</p>
+      <ul class="feat" style="margin:0">
+        <li>Colon Therapy</li><li>Vibro Massage</li><li>RHM</li><li>Ozone Therapy</li><li>Liver & Gall‑Bladder Cleansing</li><li>Coffee Enema</li><li>Papaya Face Pack</li><li>Kesh Kanti Lep</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- POLICY -->
+<section style="background:var(--cream-2)">
+  <div class="container split" style="align-items:start">
+    <div class="reveal">
+      <span class="eyebrow">Policies</span>
+      <h2>Refund & cancellation</h2>
+      <p class="lead">Please read carefully before booking.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="acc open"><button>Cancellation 15 days or more before arrival <span class="pm">+</span></button><div class="panel" style="max-height:200px"><p>50% of the booking amount will be deducted.</p></div></div>
+      <div class="acc"><button>Cancellation within 15 days of arrival <span class="pm">+</span></button><div class="panel"><p>100% of the booking amount will be deducted — no refund.</p></div></div>
+      <div class="acc"><button>Leaving before the booked days <span class="pm">+</span></button><div class="panel"><p>No refund if the health seeker leaves before completing the minimum booked days.</p></div></div>
+      <div class="acc"><button>Only one of two guests arrives / no‑show <span class="pm">+</span></button><div class="panel"><p>No refund is given if only one of two booked guests arrives, or in case of a no‑show.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/bot.js"></script>
+<script>
+(() => {
+  const cooling = { rajrishi: "2 ACs", maharishi2: "1 AC", maharishi1: "1 AC", tapasvi: "Cooler", nisarg: "1 AC" };
+  const shown = ROOMS.filter(r => r.id !== "maharishi1");
+  document.getElementById("priceGrid").innerHTML = shown.map((r, i) => `
+    <div class="card price-card reveal ${i === 1 ? "featured" : ""}" style="transition-delay:${i * .1}s">
+      ${i === 1 ? '<span class="ribbon">POPULAR</span>' : ""}
+      <div class="ph"><span class="tag ${i === 0 ? "saffron" : ""}">${i === 0 ? "Premium" : r.persons}</span><h3>${r.short || r.name}</h3>
+        <div class="price">${inr(r.room + r.treat)}<small> / day</small></div></div>
+      <div class="pb">
+        <div class="price-split"><span>Room</span><b>${inr(r.room)}</b></div>
+        <div class="price-split"><span>Treatment & diet</span><b>${inr(r.treat)}</b></div>
+        ${r.id === "maharishi2" ? `<div class="price-split"><span>Single occupancy</span><b>${inr(ROOMS[2].room + ROOMS[2].treat)}</b></div>` : ""}
+        <ul class="feat">${r.feats.map(f => `<li>${f}</li>`).join("")}</ul>
+        <a href="contact.html?room=${r.id}#book" class="btn ${i === 1 ? "btn-primary" : "btn-dark"}">Book ${(r.short || r.name).split(" ")[0]}</a>
+      </div>
+    </div>`).join("");
+  document.getElementById("cmpBody").innerHTML = ROOMS.map(r => `<tr><td><b>${r.name}</b></td><td>${inr(r.room)}</td><td>${inr(r.treat)}</td><td><b>${inr(r.room + r.treat)}</b></td><td>${cooling[r.id]}</td><td>${r.feats.slice(0, 3).join(", ")}</td></tr>`).join("");
+
+  const sel = document.getElementById("cRoom"), days = document.getElementById("cDays"), pers = document.getElementById("cPersons");
+  sel.innerHTML = ROOMS.map(r => `<option value="${r.id}">${r.name} — ${inr(r.room + r.treat)}/day</option>`).join("");
+  sel.value = "maharishi2";
+  function calc() {
+    const r = ROOMS.find(x => x.id === sel.value), d = +days.value;
+    if (r.id === "maharishi1") pers.value = "1";
+    if (r.id === "maharishi2") pers.value = "2";
+    const p = +pers.value;
+    document.getElementById("cDaysOut").textContent = d;
+    document.getElementById("cR").textContent = inr(r.room * d);
+    document.getElementById("cT").textContent = inr(r.treat * d);
+    document.getElementById("cG").textContent = inr(REG_FEE * p);
+    document.getElementById("cTotal").textContent = inr((r.room + r.treat) * d + REG_FEE * p);
+    document.getElementById("cBook").href = `contact.html?room=${r.id}&days=${d}#book`;
+  }
+  [sel, days, pers].forEach(el => el.addEventListener("input", calc));
+  calc();
+  document.querySelectorAll("#priceGrid .reveal").forEach(el => new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { el.classList.add("in"); o.disconnect(); } })).observe(el));
+})();
+</script>
+</body>
+</html>

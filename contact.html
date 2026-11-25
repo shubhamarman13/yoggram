@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book & Contact — Yog Gram Haridwar</title>
+<meta name="description" content="Send a booking enquiry to Yog Gram Haridwar or contact us at +91 8954666222, onlineyoggram@divyayoga.com. Open daily 6 AM to 10 PM.">
+<meta name="theme-color" content="#0F2E22">
+<link rel="icon" href="assets/img/yg-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="contact">
+
+<section class="page-hero">
+  <img class="bg" src="assets/img/g7.webp" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> / <span>Book & Contact</span></div>
+    <h1 class="reveal">Begin your <em class="serif">healing</em></h1>
+    <p class="lead reveal d1">Send us a booking enquiry and our team will guide you through registration, IPD request and cottage booking.</p>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container split" style="grid-template-columns:1.35fr 1fr;align-items:start">
+    <form class="form-card reveal" id="bookForm" novalidate>
+      <span class="eyebrow">Booking Enquiry</span>
+      <h2 style="font-size:2rem">Request your stay</h2>
+      <p style="color:var(--muted);margin-bottom:28px">Fields marked <span style="color:var(--saffron)">*</span> are required. We'll respond within working hours.</p>
+      <div class="form-grid">
+        <div class="field"><label for="fName">Full name <span class="req">*</span></label><input id="fName" name="name" placeholder="e.g. Rakesh Sharma" required><span class="err"></span></div>
+        <div class="field"><label for="fPhone">Mobile number <span class="req">*</span></label><input id="fPhone" name="phone" type="tel" placeholder="10‑digit mobile" required><span class="err"></span></div>
+        <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" placeholder="you@example.com"><span class="err"></span></div>
+        <div class="field"><label for="fAge">Age <span class="req">*</span></label><input id="fAge" name="age" type="number" min="1" max="110" placeholder="Years" required><span class="err"></span></div>
+        <div class="field full"><label>Gender</label>
+          <div class="radio-row">
+            <label><input type="radio" name="gender" value="Male" checked><span>Male</span></label>
+            <label><input type="radio" name="gender" value="Female"><span>Female</span></label>
+            <label><input type="radio" name="gender" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field"><label for="fCity">City / State</label><input id="fCity" name="city" placeholder="e.g. Jaipur, Rajasthan"><span class="err"></span></div>
+        <div class="field"><label for="fConcern">Primary health concern <span class="req">*</span></label>
+          <select id="fConcern" name="concern" required>
+            <option value="">Select…</option>
+            <option>General wellness / Detox</option><option>Diabetes</option><option>Obesity</option><option>Blood pressure / Heart</option><option>Arthritis / Joint pain</option><option>Back & spine</option><option>Stress / Anxiety / Sleep</option><option>Thyroid</option><option>Skin disorders</option><option>Digestive / Liver</option><option>Respiratory / Asthma</option><option>PCOD / Women's health</option><option>Other</option>
+          </select><span class="err"></span></div>
+        <div class="field"><label for="fRoom">Preferred cottage <span class="req">*</span></label><select id="fRoom" name="room" required></select><span class="err"></span></div>
+        <div class="field"><label for="fGuests">Number of guests</label><select id="fGuests" name="guests"><option>1</option><option>2</option></select></div>
+        <div class="field"><label for="fDate">Arrival date <span class="req">*</span></label><input id="fDate" name="date" type="date" required><span class="err"></span></div>
+        <div class="field"><label for="fDays">Days of stay <span class="req">*</span></label><input id="fDays" name="days" type="number" min="7" max="90" value="7" required><span class="err"></span></div>
+        <div class="field full"><label for="fMsg">Tell us about your health (optional)</label><textarea id="fMsg" name="message" placeholder="Current medications, past treatments, specific needs…"></textarea></div>
+        <div class="field full"><div class="estimate"><div><small>Estimated cost (room + treatment + registration)</small><b id="fEst">–</b></div><small style="max-width:240px">Medicines, tests & special therapies are extra. Final amount is confirmed by the centre.</small></div></div>
+        <div class="field full"><label class="consent"><input type="checkbox" id="fConsent" required> I agree to be contacted by Yog Gram about my enquiry and I have read the refund & cancellation policy.</label><span class="err" id="consentErr"></span></div>
+      </div>
+      <button class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;padding:18px">Send Booking Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </form>
+
+    <div class="contact-tiles">
+      <div class="ctile reveal"><div class="icon-bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><div><h4>Call us</h4><a href="tel:918954666222">+91 8954666222</a><p>Daily, 06:00 AM – 10:00 PM</p></div></div>
+      <div class="ctile reveal d1"><div class="icon-bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><h4>Email us</h4><a href="mailto:onlineyoggram@divyayoga.com">onlineyoggram@divyayoga.com</a><a href="mailto:yoggram@patanjaliyoggram.com">yoggram@patanjaliyoggram.com</a></div></div>
+      <div class="ctile reveal d2"><div class="icon-bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Yog Gram Campus</h4><p>Village Aurangabad, Near SIDCUL, Roshnabad, Haridwar, Uttarakhand, India – 249402</p></div></div>
+      <div class="ctile reveal d3"><div class="icon-bubble"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></div><div><h4>Corporate Office</h4><p>Patanjali Yogpeeth, Maharishi‑Haridwar, National Highway‑58, Near Bahadrabad, Haridwar, Uttarakhand, India – 249405</p></div></div>
+      <div class="ctile reveal" style="background:var(--forest);color:#fff;border:0"><div class="icon-bubble" style="background:#25D366;color:#fff"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.9 17.8L.2 24l6.3-1.7a11.8 11.8 0 0 0 5.6 1.4A11.8 11.8 0 0 0 20.4 3.6z"/></svg></div><div><h4 style="color:#fff">Prefer WhatsApp?</h4><a href="https://wa.me/918954666222?text=Namaste!%20I%20would%20like%20to%20book%20a%20stay%20at%20Yog%20Gram." target="_blank" rel="noopener" style="color:var(--saffron-2)">Chat with us instantly →</a></div></div>
+      <div class="notice reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></svg><div><b>Beware of fraud.</b> Yog Gram never asks for payment through unofficial numbers or personal accounts. Verify by calling the official helpline before paying.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="map" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center reveal"><span class="eyebrow">Find Us</span><h2>How to reach Yog Gram</h2></div>
+    <div class="grid g-3" style="margin-bottom:30px">
+      <div class="card reveal"><div class="icon-bubble">🚆</div><h3>By Train</h3><p>Haridwar Junction is the nearest major railway station, well connected to Delhi and across India.</p></div>
+      <div class="card reveal d1"><div class="icon-bubble">✈️</div><h3>By Air</h3><p>Jolly Grant Airport, Dehradun is the nearest airport, with taxis available to Haridwar.</p></div>
+      <div class="card reveal d2"><div class="icon-bubble">🚗</div><h3>By Road</h3><p>Located near SIDCUL, Roshnabad — easily reached by taxi or bus from Haridwar city and Delhi.</p></div>
+    </div>
+    <div class="map reveal"><iframe title="Map to Yog Gram Haridwar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Patanjali+Yog+Gram,+Aurangabad,+Haridwar,+Uttarakhand&output=embed"></iframe></div>
+  </div>
+</section>
+
+<div class="modal" id="okModal">
+  <div class="modal-box">
+    <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+    <h3 style="font-size:1.7rem">Enquiry ready, <span id="okName"></span>! 🙏</h3>
+    <p style="color:var(--muted)">Your reference number is <b id="okRef"></b>. Send it to Yog Gram with one tap so the team can confirm availability:</p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" id="okWa" target="_blank" rel="noopener" style="background:#25D366;box-shadow:none">Send on WhatsApp</a>
+      <a class="btn btn-dark" id="okMail">Send by Email</a>
+    </div>
+    <button class="btn btn-outline" style="margin-top:14px" onclick="document.getElementById('okModal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/bot.js"></script>
+<script>
+(() => {
+  const f = document.getElementById("bookForm");
+  const room = document.getElementById("fRoom"), days = document.getElementById("fDays"), guests = document.getElementById("fGuests");
+  room.innerHTML = `<option value="">Select…</option>` + ROOMS.map(r => `<option value="${r.id}">${r.name} — ${inr(r.room + r.treat)}/day</option>`).join("");
+  const date = document.getElementById("fDate");
+  const t = new Date(); t.setDate(t.getDate() + 1);
+  date.min = t.toISOString().slice(0, 10);
+
+  // Prefill from Stay page links
+  const qs = new URLSearchParams(location.search);
+  if (qs.get("room")) room.value = qs.get("room");
+  if (qs.get("days")) days.value = Math.max(7, +qs.get("days"));
+
+  function est() {
+    const r = ROOMS.find(x => x.id === room.value);
+    if (r?.id === "maharishi2") guests.value = "2";
+    if (r?.id === "maharishi1") guests.value = "1";
+    const d = Math.max(+days.value || 0, MIN_DAYS);
+    document.getElementById("fEst").textContent = r ? inr((r.room + r.treat) * d + REG_FEE * +guests.value) : "Select a cottage";
+  }
+  [room, days, guests].forEach(el => el.addEventListener("input", est));
+  est();
+
+  const rules = {
+    fName: v => v.trim().length >= 3 || "Please enter your full name",
+    fPhone: v => /^(\+?91[\s-]?)?[6-9]\d{9}$/.test(v.replace(/\s/g, "")) || "Enter a valid 10‑digit Indian mobile number",
+    fEmail: v => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "Enter a valid email",
+    fAge: v => (+v >= 1 && +v <= 110) || "Enter a valid age",
+    fConcern: v => !!v || "Please select a concern",
+    fRoom: v => !!v || "Please choose a cottage",
+    fDate: v => !!v || "Please choose an arrival date",
+    fDays: v => +v >= 7 || "Minimum stay is 7 days"
+  };
+  function check(id) {
+    const el = document.getElementById(id), res = rules[id](el.value), field = el.closest(".field");
+    field.classList.toggle("invalid", res !== true);
+    field.querySelector(".err").textContent = res === true ? "" : res;
+    return res === true;
+  }
+  Object.keys(rules).forEach(id => document.getElementById(id).addEventListener("blur", () => check(id)));
+
+  f.addEventListener("submit", e => {
+    e.preventDefault();
+    let ok = Object.keys(rules).map(check).every(Boolean);
+    const consent = document.getElementById("fConsent").checked;
+    document.getElementById("consentErr").textContent = consent ? "" : "Please accept to continue";
+    if (!ok || !consent) { f.querySelector(".invalid input, .invalid select")?.focus(); return; }
+
+    const v = Object.fromEntries(new FormData(f));
+    const r = ROOMS.find(x => x.id === v.room);
+    const ref = "YG" + Date.now().toString().slice(-7);
+    const text = `Namaste Yog Gram 🙏\nBooking enquiry ${ref}\n\nName: ${v.name}\nMobile: ${v.phone}\nEmail: ${v.email || "-"}\nAge/Gender: ${v.age} / ${v.gender}\nCity: ${v.city || "-"}\nConcern: ${v.concern}\nCottage: ${r.name}\nGuests: ${v.guests}\nArrival: ${v.date}\nDays: ${v.days}\nEstimated: ${document.getElementById("fEst").textContent}\n\nNotes: ${v.message || "-"}`;
+    document.getElementById("okName").textContent = v.name.split(" ")[0];
+    document.getElementById("okRef").textContent = ref;
+    document.getElementById("okWa").href = `https://wa.me/${SITE.phoneRaw}?text=${encodeURIComponent(text)}`;
+    document.getElementById("okMail").href = `mailto:${SITE.emails.join(",")}?subject=${encodeURIComponent("Booking enquiry " + ref + " - " + v.name)}&body=${encodeURIComponent(text)}`;
+    document.getElementById("okModal").classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
