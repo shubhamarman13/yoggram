@@ -10,7 +10,7 @@ const SITE = {
   corp: "Patanjali Yogpeeth, Maharishi‑Haridwar, National Highway‑58, Near Bahadrabad, Haridwar, Uttarakhand – 249405",
   web: "https://www.yoggram.divyayoga.com",
   // Google Apps Script web-app URL that saves booking enquiries to Google Sheets
-  sheetUrl: ""
+  sheetUrl: "https://script.google.com/macros/s/AKfycbxiqY-CAp6pxhep3OJBlbMU4AcCmy3xFF0fiwoZb0wERIGqMrCqbZVnyQbZQefnzA3s/exec"
 };
 
 const ICON = {
