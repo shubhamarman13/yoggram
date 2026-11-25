@@ -8,7 +8,9 @@ const SITE = {
   hours: "06:00 AM – 10:00 PM",
   addr: "Village Aurangabad, Near SIDCUL, Roshnabad, Haridwar, Uttarakhand, India – 249402",
   corp: "Patanjali Yogpeeth, Maharishi‑Haridwar, National Highway‑58, Near Bahadrabad, Haridwar, Uttarakhand – 249405",
-  web: "https://www.yoggram.divyayoga.com"
+  web: "https://www.yoggram.divyayoga.com",
+  // Google Apps Script web-app URL that saves booking enquiries to Google Sheets
+  sheetUrl: ""
 };
 
 const ICON = {

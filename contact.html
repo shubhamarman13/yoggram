@@ -52,6 +52,7 @@
         <div class="field"><label for="fDays">Days of stay <span class="req">*</span></label><input id="fDays" name="days" type="number" min="7" max="90" value="7" required><span class="err"></span></div>
         <div class="field full"><label for="fMsg">Tell us about your health (optional)</label><textarea id="fMsg" name="message" placeholder="Current medications, past treatments, specific needs…"></textarea></div>
         <div class="field full"><div class="estimate"><div><small>Estimated cost (room + treatment + registration)</small><b id="fEst">–</b></div><small style="max-width:240px">Medicines, tests & special therapies are extra. Final amount is confirmed by the centre.</small></div></div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="field full"><label class="consent"><input type="checkbox" id="fConsent" required> I agree to be contacted by Yog Gram about my enquiry and I have read the refund & cancellation policy.</label><span class="err" id="consentErr"></span></div>
       </div>
       <button class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;padding:18px">Send Booking Enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
@@ -83,8 +84,8 @@
 <div class="modal" id="okModal">
   <div class="modal-box">
     <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-    <h3 style="font-size:1.7rem">Enquiry ready, <span id="okName"></span>! 🙏</h3>
-    <p style="color:var(--muted)">Your reference number is <b id="okRef"></b>. Send it to Yog Gram with one tap so the team can confirm availability:</p>
+    <h3 style="font-size:1.7rem" id="okTitle">Thank you, <span id="okName"></span>! 🙏</h3>
+    <p style="color:var(--muted)" id="okText">Your reference number is <b id="okRef"></b>.</p>
     <div class="modal-actions">
       <a class="btn btn-primary" id="okWa" target="_blank" rel="noopener" style="background:#25D366;box-shadow:none">Send on WhatsApp</a>
       <a class="btn btn-dark" id="okMail">Send by Email</a>
@@ -138,8 +139,21 @@
   }
   Object.keys(rules).forEach(id => document.getElementById(id).addEventListener("blur", () => check(id)));
 
-  f.addEventListener("submit", e => {
+  const submitBtn = f.querySelector("button:not([type=button])");
+  async function saveToSheet(payload) {
+    if (!SITE.sheetUrl) return false;
+    try {
+      const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 15000);
+      // text/plain + no-cors avoids a CORS preflight, which Apps Script cannot answer
+      await fetch(SITE.sheetUrl, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload), signal: ctrl.signal });
+      clearTimeout(timer);
+      return true;
+    } catch (err) { return false; }
+  }
+
+  f.addEventListener("submit", async e => {
     e.preventDefault();
+    if (submitBtn.disabled) return;
     let ok = Object.keys(rules).map(check).every(Boolean);
     const consent = document.getElementById("fConsent").checked;
     document.getElementById("consentErr").textContent = consent ? "" : "Please accept to continue";
@@ -149,8 +163,15 @@
     const r = ROOMS.find(x => x.id === v.room);
     const ref = "YG" + Date.now().toString().slice(-7);
     const text = `Namaste Yog Gram 🙏\nBooking enquiry ${ref}\n\nName: ${v.name}\nMobile: ${v.phone}\nEmail: ${v.email || "-"}\nAge/Gender: ${v.age} / ${v.gender}\nCity: ${v.city || "-"}\nConcern: ${v.concern}\nCottage: ${r.name}\nGuests: ${v.guests}\nArrival: ${v.date}\nDays: ${v.days}\nEstimated: ${document.getElementById("fEst").textContent}\n\nNotes: ${v.message || "-"}`;
+    const btnHtml = submitBtn.innerHTML;
+    submitBtn.disabled = true; submitBtn.textContent = "Sending your enquiry…";
+    const saved = await saveToSheet({ ref, ...v, room: r.name, estimate: document.getElementById("fEst").textContent });
+    submitBtn.disabled = false; submitBtn.innerHTML = btnHtml;
+    document.getElementById("okText").innerHTML = saved
+      ? `Your enquiry has been received. Reference number: <b>${ref}</b>. Our team will call you soon. Want a faster reply? You can also message us:`
+      : `Your reference number is <b>${ref}</b>. Please send your enquiry to Yog Gram with one tap so the team can confirm availability:`;
+    if (saved) f.reset(), est();
     document.getElementById("okName").textContent = v.name.split(" ")[0];
-    document.getElementById("okRef").textContent = ref;
     document.getElementById("okWa").href = `https://wa.me/${SITE.phoneRaw}?text=${encodeURIComponent(text)}`;
     document.getElementById("okMail").href = `mailto:${SITE.emails.join(",")}?subject=${encodeURIComponent("Booking enquiry " + ref + " - " + v.name)}&body=${encodeURIComponent(text)}`;
     document.getElementById("okModal").classList.add("show");
